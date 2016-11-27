@@ -20,6 +20,7 @@ public class PortComposantFourni extends M2.Interface.PortComposantFourni{
 
         if (this.parent instanceof Client) {
             System.out.printf("Le message est sur le port " + this.getName() + " du Client\n");
+
         }
         else
         if (this.parent instanceof Serveur) {

@@ -2,6 +2,7 @@ package M1.Interface;
 
 import M1.Serveur.Serveur;
 import M1.Serveur.ServeurDetail;
+import M1.Systeme.SystemeCS;
 import M2.ObjectArchi.ObjetArchitectural;
 
 /**
@@ -18,6 +19,11 @@ public class PortConfigurationRequis extends M2.Interface.PortConfigurationRequi
         if (parent instanceof ServeurDetail) {
             System.out.printf("Le message est sur le port " + this.getName() + "  du serveur Detail\n");
             ((ServeurDetail)parent).notifierBinding(this);
+        }
+        else
+        if (parent instanceof SystemeCS) {
+            System.out.printf("Le message est sur le port "+ this.getName() + "  du SystemeCS\n");
+
         }
         //else la deuxieme config systeme cs
 

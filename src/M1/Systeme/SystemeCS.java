@@ -70,11 +70,14 @@ public class SystemeCS extends Configuration{
         attachementMap.get(interfaceCalling).transmettre();
     }
 
-    private void bind(Interface emetteur){
+    public void bind(Interface emetteur){
         bindingMap.get(emetteur).transmettre(emetteur);
     }
 
     public void test(){
-        ((Client)composants.getFirst()).EnvoyerRequete();
+        (portsConfigFournis.getFirst()).setInformation("|GET|303");
+        ((Client)this.composants.getFirst()).EnvoyerRequete((portsConfigFournis.getFirst()).getInformation());
+        System.out.printf(this.portsConfigRequises.getFirst().getInformation().toString()+"\n");
+        System.out.printf(this.portsConfigFournis.getFirst().getInformation().toString()+"\n");
     }
 }

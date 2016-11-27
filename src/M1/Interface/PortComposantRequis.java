@@ -30,6 +30,7 @@ public class PortComposantRequis extends M2.Interface.PortComposantRequis{
         else
                 if (this.parent instanceof Client) {
                     System.out.printf("Le message est sur le port  "+ this.getName() + "  du Client\n");
+                    ((Client)parent).notifierSystemBind(this);
                 }
             else
                 if (this.parent instanceof SecurityManager) {

@@ -35,7 +35,7 @@ public class DataBase extends ComposantConcret{
     private void initDB() {
         database.put(303, "pomme");
         database.put(504, "poire");
-        database.put(78, "bannane");
+        database.put(78, "banane");
     }
 
     public PortComposantFourni getFourni(int i) {

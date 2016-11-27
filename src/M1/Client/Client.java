@@ -23,17 +23,18 @@ public class Client extends ComposantConcret {
         this.ID = ID;
     }
 
-    public void EnvoyerRequete() {
+    public void EnvoyerRequete(String information) {
 
-        System.out.printf("Le client envoie une requete\n");
-        (portsFournis.getFirst()).setInformation(ID.toString() + "|SET|3|toto");
+        (portsFournis.getFirst()).setInformation(ID.toString() + information);
         cs.notification(portsFournis.getFirst(), this);
-        System.out.printf("\n\n\n"+this.portsFournis.getFirst().getInformation().toString()+"\n");
-        System.out.printf(this.portsRequis.getFirst().getInformation().toString()+"\n");
+
     }
 
     public void notifierSystem(Interface notifieur){
         cs.notification(notifieur);
+    }
+    public void notifierSystemBind(Interface notifieur){
+        cs.bind(notifieur);
     }
 
     public PortComposantFourni getPremierFourni(){
